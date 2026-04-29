@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <header class="top-bar">
@@ -25,77 +25,180 @@
       </nav>
     </header>
 
-     <!-- ── ABOUT PAGE ── -->
-  <main id="about" class="page active">
-    <div class="about-layout">
-      <div class="about-left">
-        <div>
-          <p class="eyebrow">Junior Frontend Developer</p>
-          <h1 class="hero-name">Hei, jeg er<br><em>Christina</em></h1>
-          <p class="hero-sub">Basert i Oslo · Åpen for nye muligheter</p>
-          <p class="bio">
-            Jeg bygger vakre, brukervennlige webapplikasjoner med React. Opptatt av ren kode, god UX og å lære noe nytt hver dag. Jeg ser etter min første stilling i et engasjert team der jeg kan vokse og bidra.
-          </p>
+    <!-- ── ABOUT PAGE ── -->
+    <main id="about" class="page active">
+      <div class="about-layout">
+        <div class="about-left">
+          <div>
+            <div>
+              <p class="eyebrow">
+                Junior Frontend Developer
+                <a
+                  class="btn-cv"
+                  href="assets/christina-cv.pdf"
+                  download
+                  title="Last ned CV"
+                >
+                  ↓
+                </a>
+              </p>
+            </div>
+
+            <h1 class="hero-name">Hei, jeg er<br /><em>Christina</em></h1>
+            <p class="hero-sub">Basert i Oslo · Åpen for nye muligheter</p>
+            <p class="bio">
+              Jeg bygger vakre, brukervennlige webapplikasjoner med React.
+              Opptatt av ren kode, god UX og å lære noe nytt hver dag. Jeg ser
+              etter min første stilling i et engasjert team der jeg kan vokse og
+              bidra.
+            </p>
+          </div>
+          <div>
+            <p class="contact-section-label">Kontakt</p>
+            <div class="contact-links">
+              <a
+                class="link-item"
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <div class="link-dot"></div>
+                github.com/christina
+              </a>
+              <a
+                class="link-item"
+                href="https://linkedin.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <div class="link-dot"></div>
+                linkedin.com/in/christina
+              </a>
+              <a class="link-item" href="mailto:christina@email.com">
+                <div class="link-dot"></div>
+                christina@email.com
+              </a>
+            </div>
+          </div>
         </div>
-        <div>
-          <p class="contact-section-label">Kontakt</p>
-          <div class="contact-links">
-            <a class="link-item" href="https://github.com/" target="_blank" rel="noopener">
-              <div class="link-dot"></div>github.com/christina
-            </a>
-            <a class="link-item" href="https://linkedin.com/" target="_blank" rel="noopener">
-              <div class="link-dot"></div>linkedin.com/in/christina
-            </a>
-            <a class="link-item" href="mailto:christina@email.com">
-              <div class="link-dot"></div>christina@email.com
-            </a>
+
+        <!-- Right side -->
+
+        <div class="about-right">
+          <p class="section-label">Ferdigheter</p>
+          <div class="skill-list">
+            <div class="skill-row">
+              <span class="skill-name">React</span>
+              <span class="skill-cat cat-core">Kjerne</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">JavaScript</span>
+              <span class="skill-cat cat-core">Kjerne</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">TypeScript</span>
+              <span class="skill-cat cat-core">Kjerne</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">CSS / Tailwind</span>
+              <span class="skill-cat cat-style">Styling</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">Git & GitHub</span>
+              <span class="skill-cat cat-tool">Verktøy</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">Figma</span>
+              <span class="skill-cat cat-tool">Verktøy</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">Next.js</span>
+              <span class="skill-cat cat-learn">Lærer</span>
+            </div>
+          </div>
+
+          <div class="availability">
+            <div class="avail-dot"></div>
+            Tilgjengelig for jobb · Oslo / Remote
           </div>
         </div>
       </div>
- 
-      <div class="about-right">
-        <p class="section-label">Ferdigheter</p>
-        <div class="skill-list">
-          <div class="skill-row">
-            <span class="skill-name">React</span>
-            <span class="skill-cat cat-core">Kjerne</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">JavaScript</span>
-            <span class="skill-cat cat-core">Kjerne</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">TypeScript</span>
-            <span class="skill-cat cat-core">Kjerne</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">CSS / Tailwind</span>
-            <span class="skill-cat cat-style">Styling</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">Git & GitHub</span>
-            <span class="skill-cat cat-tool">Verktøy</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">Figma</span>
-            <span class="skill-cat cat-tool">Verktøy</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">Next.js</span>
-            <span class="skill-cat cat-learn">Lærer</span>
-          </div>
+    </main>
+
+    <!-- ── PROJECTS PAGE ── -->
+    <main id="projects" class="page">
+      <div class="projects-page">
+        <div class="proj-header">
+          <h2 class="proj-title-big">Prosjekter</h2>
+          <span class="proj-count">3 prosjekter</span>
         </div>
- 
-        <div class="availability">
-          <div class="avail-dot"></div>
-          Tilgjengelig for jobb · Oslo / Remote
+
+        <div class="proj-grid">
+          <a
+            class="proj-card"
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="proj-accent acc-1"></div>
+            <h3 class="proj-name">Taskflow App</h3>
+            <p class="proj-desc">
+              Drag-and-drop Kanban-tavle med filtrering og lokal lagring. Fokus
+              på React state management og smooth animasjoner.
+            </p>
+            <div class="tag-row">
+              <span class="ptag t-react">React</span>
+              <span class="ptag t-ts">TypeScript</span>
+              <span class="ptag t-css">CSS Modules</span>
+            </div>
+          </a>
+
+          <a
+            class="proj-card"
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="proj-accent acc-2"></div>
+            <h3 class="proj-name">WeatherUI</h3>
+            <p class="proj-desc">
+              Vær-dashboard med live data fra OpenWeather API. Responsivt design
+              med 5-dagers prognose og animerte ikoner.
+            </p>
+            <div class="tag-row">
+              <span class="ptag t-react">React</span>
+              <span class="ptag t-api">REST API</span>
+              <span class="ptag t-css">Tailwind</span>
+            </div>
+          </a>
+
+          <a
+            class="proj-card"
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="proj-accent acc-3"></div>
+            <h3 class="proj-name">Dev Blog</h3>
+            <p class="proj-desc">
+              Personlig blogg med Next.js og Markdown. Dark mode, syntax
+              highlighting og full SEO-optimalisering.
+            </p>
+            <div class="tag-row">
+              <span class="ptag t-next">Next.js</span>
+              <span class="ptag t-ts">TypeScript</span>
+              <span class="ptag t-node">Node</span>
+            </div>
+          </a>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-    
+    <footer class="bottom-bar">
+      <span>Christina · Junior Frontend Developer</span>
+      <span>Oslo, Norge · 2025</span>
+    </footer>
 
-    <script src="script.js"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>
