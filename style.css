@@ -360,11 +360,9 @@ nav {
  
 
 
-
-
-
      /* ── BOTTOM BAR ── */
-    .bottom-bar {
+ 
+       .bottom-bar {
       background: var(--surface);
       border-top: 1px solid var(--border);
       padding: 0 40px;
