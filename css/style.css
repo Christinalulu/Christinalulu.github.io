@@ -386,5 +386,6 @@ nav {
       .hero-name { font-size: 42px; }
       .projects-page { padding: 32px 24px; }
       .bottom-bar { padding: 0 20px; }
+      .eyebrow { justify-content: flex-start;}
       
     }
