@@ -13,14 +13,88 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header class="top-bar">
+      <a href="#" class="logo" onclick="show('about')">C<em>hristina</em></a>
+      <nav>
+        <button class="nav-btn active" id="btn-about" onclick="show('about')">
+          Om meg
+        </button>
+        <button class="nav-btn" id="btn-projects" onclick="show('projects')">
+          Prosjekter
+        </button>
+      </nav>
+    </header>
+
+     <!-- ── ABOUT PAGE ── -->
+  <main id="about" class="page active">
+    <div class="about-layout">
+      <div class="about-left">
+        <div>
+          <p class="eyebrow">Junior Frontend Developer</p>
+          <h1 class="hero-name">Hei, jeg er<br><em>Christina</em></h1>
+          <p class="hero-sub">Basert i Oslo · Åpen for nye muligheter</p>
+          <p class="bio">
+            Jeg bygger vakre, brukervennlige webapplikasjoner med React. Opptatt av ren kode, god UX og å lære noe nytt hver dag. Jeg ser etter min første stilling i et engasjert team der jeg kan vokse og bidra.
+          </p>
+        </div>
+        <div>
+          <p class="contact-section-label">Kontakt</p>
+          <div class="contact-links">
+            <a class="link-item" href="https://github.com/" target="_blank" rel="noopener">
+              <div class="link-dot"></div>github.com/christina
+            </a>
+            <a class="link-item" href="https://linkedin.com/" target="_blank" rel="noopener">
+              <div class="link-dot"></div>linkedin.com/in/christina
+            </a>
+            <a class="link-item" href="mailto:christina@email.com">
+              <div class="link-dot"></div>christina@email.com
+            </a>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="about-right">
+        <p class="section-label">Ferdigheter</p>
+        <div class="skill-list">
+          <div class="skill-row">
+            <span class="skill-name">React</span>
+            <span class="skill-cat cat-core">Kjerne</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">JavaScript</span>
+            <span class="skill-cat cat-core">Kjerne</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">TypeScript</span>
+            <span class="skill-cat cat-core">Kjerne</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">CSS / Tailwind</span>
+            <span class="skill-cat cat-style">Styling</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Git & GitHub</span>
+            <span class="skill-cat cat-tool">Verktøy</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Figma</span>
+            <span class="skill-cat cat-tool">Verktøy</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Next.js</span>
+            <span class="skill-cat cat-learn">Lærer</span>
+          </div>
+        </div>
+ 
+        <div class="availability">
+          <div class="avail-dot"></div>
+          Tilgjengelig for jobb · Oslo / Remote
+        </div>
+      </div>
+    </div>
+  </main>
+
     
-     <header class="top-bar">
-    <a href="#" class="logo" onclick="show('about')">C<em>hristina</em></a>
-    <nav>
-      <button class="nav-btn active" id="btn-about" onclick="show('about')">Om meg</button>
-      <button class="nav-btn" id="btn-projects" onclick="show('projects')">Prosjekter</button>
-    </nav>
-  </header>
 
     <script src="script.js"></script>
   </body>
