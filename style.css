@@ -94,13 +94,37 @@ nav {
 
 /* ── PAGES ── */
 .page {
-  display: none;
-  flex: 1;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  opacity: 0;
+ transform: translateX(40px);
+transition: opacity 0.6s cubic-bezier(.25,0,.1,1),
+            transform 0.6s cubic-bezier(.25,0,.1,1);
+  pointer-events: none;
+  visibility: hidden;
 }
+
 .page.active {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+  visibility: visible;
 }
+
+.page.exit-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.viewport {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  min-height: calc(100vh - 60px - 48px); /* høyde minus topbar og footer */
+}
+
 
 /* ── ABOUT PAGE ── */
 .about-layout {
@@ -143,7 +167,20 @@ nav {
 .hero-name em {
   font-style: italic;
   color: var(--accent);
+  position: relative; /* ← understreken vil ikke vises uten denne */
 }
+
+
+.hero-name em::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.8s cubic-bezier(.4,0,.2,1) 0.3s;
+}
+.page.active .hero-name em::after { width: 100%; }
 
 .hero-sub {
   font-size: 13px;
@@ -151,6 +188,7 @@ nav {
   font-weight: 300;
   margin-bottom: 36px;
   letter-spacing: 0.02em;
+   margin-top: 20px;
 }
 
 .bio {
@@ -308,13 +346,31 @@ nav {
   border-radius: 50%;
   background: #6dc46d;
   flex-shrink: 0;
-  box-shadow: 0 0 0 3px #edf7ed;
+ box-shadow: 0 0 0 3px #edf7ed;
+  animation: pulse 2s infinite;
+}
+
+.stagger-in .skill-row {
+  opacity: 0;
+  transform: translateX(-8px);
+  animation: slideIn 0.35s forwards;
+}
+/* Du har bare 1 og 2, legg til: */
+.stagger-in .skill-row:nth-child(3) { animation-delay: 0.15s; }
+.stagger-in .skill-row:nth-child(4) { animation-delay: 0.20s; }
+.stagger-in .skill-row:nth-child(5) { animation-delay: 0.25s; }
+.stagger-in .skill-row:nth-child(6) { animation-delay: 0.30s; }
+.stagger-in .skill-row:nth-child(7) { animation-delay: 0.35s; }
+/* osv... */
+
+@keyframes slideIn {
+  to { opacity: 1; transform: translateX(0); }
 }
 
 /* ── PROJECTS PAGE ── */
 .projects-page {
-  padding: 48px 48px;
-  flex: 1;
+  padding: 48px;
+  min-height: 100%;
 }
 
 .proj-header {
@@ -435,6 +491,32 @@ nav {
   background: #f0faf0;
 }
 
+.proj-stagger .proj-card {
+  opacity: 0;
+  transform: translateY(30px); /* litt mer avstand for mykere inngang */
+  animation: cardIn 0.3s cubic-bezier(.25,0,.1,1) forwards; /* smoothere kurve */
+}
+
+.proj-stagger .proj-card:nth-child(1) { animation-delay: 0.05s; }
+.proj-stagger .proj-card:nth-child(2) { animation-delay: 0.15s; }
+.proj-stagger .proj-card:nth-child(3) { animation-delay: 0.25s; }
+
+@keyframes cardIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 3px #edf7ed; }
+  50%       { box-shadow: 0 0 0 5px #d4f0d4; }
+}
+
+.skill-row:hover { transform: translateX(4px); }
+
+.proj-accent { width: 30px; transition: width 0.3s ease; }
+.proj-card:hover .proj-accent { width: 48px; }
+
+
+
 /* ── BOTTOM BAR ── */
 
 .bottom-bar {
@@ -447,6 +529,7 @@ nav {
   align-items: center;
   font-size: 11px;
   color: var(--text-faint);
+  position: relative;
 }
 
 /* ── RESPONSIVE ── */
