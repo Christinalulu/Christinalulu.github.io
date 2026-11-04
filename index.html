@@ -14,17 +14,28 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <header class="top-bar">
-      <a href="#" class="logo" onclick="show('about')">C<em>hristina</em> <em>Lu</em></a>
+      <a href="#" class="logo" onclick="show('about')"
+        >C<em>hristina</em> <em>Lu</em></a
+      >
       <nav>
-        <button class="nav-btn active" id="btn-about" onclick="show('about')">
-          Om meg
+        <button class="nav-btn active" id="btn-about" onclick="show('about')" data-i18n="aboutNav">
+          About
         </button>
-        <button class="nav-btn" id="btn-projects" onclick="show('projects')">
-          Prosjekter
+        <button class="nav-btn" id="btn-projects" onclick="show('projects')" data-i18n="projectsNav">
+          Projects
+        </button>
+        <button
+          class="nav-btn language-btn"
+          id="language-toggle"
+          type="button"
+          onclick="toggleLanguage()"
+          aria-label="Switch language to Norwegian"
+        >
+          Norsk
         </button>
       </nav>
     </header>
@@ -36,24 +47,30 @@
           <div class="about-left">
             <div>
               <p class="eyebrow">
-                Junior Frontend Developer
-                <a class="btn-cv" href="#" download title="Last ned CV"> ↓ </a>
+                <span data-i18n="role">Junior Frontend Developer</span>
+                <a class="btn-cv" href="#" download title="Download CV"> ↓ </a>
               </p>
 
-              <h1 class="hero-name">Hei, jeg heter<br /><em>Christina</em> <em>Lu</em></h1>
-              <p class="hero-sub">Basert i Hagan · Åpen for nye muligheter</p>
-              <p class="bio">
-                Jeg er en frontend-utvikler som liker å skape moderne,
-                responsive og brukervennlige webapplikasjoner. Jeg jobber med
-                HTML, CSS, JavaScript og React, og brenner for godt design, ren
-                kode og god brukeropplevelse (UX). Gjennom egne prosjekter
-                utvikler jeg ferdighetene mine og utforsker nye teknologier. Nå
-                søker jeg min første mulighet som frontend-utvikler i et
-                engasjert team, hvor jeg kan bidra, lære og vokse videre.
+              <h1 class="hero-name">
+                <span data-i18n="greeting">Hi, I'm</span><br /><em>Christina</em>
+                <em>Lu</em>
+              </h1>
+              <p class="hero-sub" data-i18n="heroSubtitle">
+                Based in Hagan · Open to new opportunities
+              </p>
+              <p class="bio" data-i18n="bio">
+                I'm a frontend developer who enjoys creating modern, responsive
+                and user-friendly web applications. I work with HTML, CSS,
+                JavaScript and React, and care about thoughtful design, clean
+                code and a great user experience (UX). I'm continuously
+                developing my skills through personal projects and exploring
+                new technologies. I'm now looking for my first frontend
+                developer opportunity, where I can contribute, learn and grow
+                as part of a great team.
               </p>
             </div>
             <div>
-              <p class="contact-section-label">Kontakt</p>
+              <p class="contact-section-label" data-i18n="contact">Contact</p>
               <div class="contact-links">
                 <a
                   class="link-item"
@@ -84,41 +101,41 @@
           <!-- Right side -->
 
           <div class="about-right">
-            <p class="section-label">Ferdigheter</p>
+            <p class="section-label" data-i18n="skillsTitle">Skills</p>
             <div class="skill-list stagger-in">
               <div class="skill-row">
                 <span class="skill-name">HTML5</span>
-                <span class="skill-cat cat-core">Kjerne</span>
+                <span class="skill-cat cat-core" data-i18n="categoryCore">Core</span>
               </div>
               <div class="skill-row">
                 <span class="skill-name">CSS</span>
-                <span class="skill-cat cat-style">Styiling</span>
+                <span class="skill-cat cat-style" data-i18n="categoryStyling">Styling</span>
               </div>
               <div class="skill-row">
                 <span class="skill-name">JavaScript</span>
-                <span class="skill-cat cat-core">Kjerne</span>
+                <span class="skill-cat cat-core" data-i18n="categoryCore">Core</span>
               </div>
               <div class="skill-row">
                 <span class="skill-name">Tailwindcss</span>
-                <span class="skill-cat cat-style">Styling</span>
+                <span class="skill-cat cat-style" data-i18n="categoryStyling">Styling</span>
               </div>
               <div class="skill-row">
                 <span class="skill-name">Git & GitHub</span>
-                <span class="skill-cat cat-tool">Verktøy</span>
+                <span class="skill-cat cat-tool" data-i18n="categoryTools">Tools</span>
               </div>
               <div class="skill-row">
                 <span class="skill-name">Figma</span>
-                <span class="skill-cat cat-tool">Verktøy</span>
+                <span class="skill-cat cat-tool" data-i18n="categoryTools">Tools</span>
               </div>
               <div class="skill-row">
                 <span class="skill-name">React Js</span>
-                <span class="skill-cat cat-core">Kjerne</span>
+                <span class="skill-cat cat-core" data-i18n="categoryCore">Core</span>
               </div>
             </div>
 
             <div class="availability">
               <div class="avail-dot"></div>
-              Tilgjengelig for jobb · Akerhus / Oslo / Remote
+              <span data-i18n="availability">Available for work · Akershus / Oslo / Remote</span>
             </div>
           </div>
         </div>
@@ -128,22 +145,26 @@
       <main id="projects" class="page">
         <div class="projects-page">
           <div class="proj-header">
-            <h2 class="proj-title-big">Prosjekter</h2>
-            <span class="proj-count">3 prosjekter</span>
+            <h2 class="proj-title-big" data-i18n="projectsTitle">Projects</h2>
+            <span class="proj-count" data-i18n="projectCount">3 projects</span>
           </div>
 
           <div class="proj-grid">
             <a
               class="proj-card"
-              href="https://nova-appel.vercel.app/"
+              href="https://jobb-tracker-one.vercel.app/"
               target="_blank"
               rel="noopener"
             >
               <div class="proj-accent acc-1"></div>
-              <h3 class="proj-name">Nova</h3>
-              <p class="proj-desc">
-                Nova er et prosjekt jeg har utviklet med fokus på
-                funksjonalitet, design og en god brukeropplevelse.
+              <h3 class="proj-name">JobbTracker</h3>
+              <p class="proj-desc" data-i18n="jobTrackerDescription">
+                JobbTracker is a responsive web app designed to make the job
+                search process easier and more organized. Users can track job
+                applications and deadlines, update application statuses, and
+                save interesting job listings. It includes search and filter
+                tools, an application overview, and support for organizing
+                multiple profiles.
               </p>
               <div class="tag-row">
                 <span class="ptag t-html">HTML</span>
@@ -160,9 +181,10 @@
             >
               <div class="proj-accent acc-2"></div>
               <h3 class="proj-name">WeatherUI</h3>
-              <p class="proj-desc">
-                Vær-dashboard med live data fra OpenWeather API. Responsivt
-                design med 5-dagers prognose og animerte ikoner.
+              <p class="proj-desc" data-i18n="weatherDescription">
+                A weather dashboard featuring live data from the OpenWeather
+                API, a responsive layout, a five-day forecast and animated
+                icons.
               </p>
               <div class="tag-row">
                 <span class="ptag t-react">React</span>
@@ -179,9 +201,9 @@
             >
               <div class="proj-accent acc-3"></div>
               <h3 class="proj-name">Dev Blog</h3>
-              <p class="proj-desc">
-                Personlig blogg med Next.js og Markdown. Dark mode, syntax
-                highlighting og full SEO-optimalisering.
+              <p class="proj-desc" data-i18n="blogDescription">
+                A personal blog built with Next.js and Markdown, featuring dark
+                mode, syntax highlighting and SEO optimization.
               </p>
               <div class="tag-row">
                 <span class="ptag t-next">Next.js</span>
@@ -195,10 +217,10 @@
     </div>
 
     <footer class="bottom-bar">
-      <span>Christina Lu · Junior Frontend Developer</span>
-      <span>Hagan, Norge · 2026</span>
+      <span data-i18n="footerRole">Christina Lu · Junior Frontend Developer</span>
+      <span data-i18n="footerLocation">Hagan, Norway · 2026</span>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/script/script.js"></script>
   </body>
 </html>
