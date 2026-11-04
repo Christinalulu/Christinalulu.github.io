@@ -490,6 +490,16 @@ transition: opacity 0.6s cubic-bezier(.25,0,.1,1),
   border-color: #b8e0b8;
   background: #f0faf0;
 }
+.t-html {
+  color: #f0eaea;
+  border-color: #ec2828;
+  background: #cc5353;
+}
+.t-js {
+  color: #f0eaea;
+  border-color: #a15fec;
+  background: #bc98e6;
+}
 
 .proj-stagger .proj-card {
   opacity: 0;
