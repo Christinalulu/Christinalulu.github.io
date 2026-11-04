@@ -16,8 +16,9 @@ const translations = {
     categoryTools: 'Tools',
     availability: 'Available for work · Akershus / Oslo / Remote',
     projectsTitle: 'Projects',
-    projectCount: '3 projects',
+    projectCount: count => `${count} projects`,
     jobTrackerDescription: 'JobbTracker is a responsive web app designed to make the job search process easier and more organized. Users can track job applications and deadlines, update application statuses, and save interesting job listings. It includes search and filter tools, an application overview, and support for organizing multiple profiles.',
+    plukkDescription: 'Plukk is a personal continuation of GroceryBuddy, a team project developed at GET Academy. I have given the application a new visual identity, including a custom logo, color palette, and redesigned user interface. The project builds on the original functionality, with a focus on branding, visual design, and user experience.',
     weatherDescription: 'A weather dashboard featuring live data from the OpenWeather API, a responsive layout, a five-day forecast and animated icons.',
     blogDescription: 'A personal blog built with Next.js and Markdown, featuring dark mode, syntax highlighting and SEO optimization.',
     footerRole: 'Christina Lu · Junior Frontend Developer',
@@ -41,8 +42,9 @@ const translations = {
     categoryTools: 'Verktøy',
     availability: 'Tilgjengelig for jobb · Akershus / Oslo / fjernarbeid',
     projectsTitle: 'Prosjekter',
-    projectCount: '3 prosjekter',
+    projectCount: count => `${count} prosjekter`,
     jobTrackerDescription: 'JobbTracker er en responsiv webapplikasjon som gjør jobbsøkerprosessen enklere og mer oversiktlig. Brukere kan følge opp jobbsøknader og frister, oppdatere søknadsstatus og lagre interessante stillingsannonser. Løsningen har søke- og filtreringsfunksjoner, en oversikt over søknader og støtte for flere profiler.',
+    plukkDescription: 'Plukk er en personlig videreutvikling av GroceryBuddy, et teamprosjekt utviklet ved GET Academy. Jeg har gitt applikasjonen en ny visuell identitet med egen logo, fargepalett og et redesignet brukergrensesnitt. Prosjektet bygger videre på den opprinnelige funksjonaliteten, med fokus på merkevarebygging, visuelt design og brukeropplevelse.',
     weatherDescription: 'Et vær-dashboard med live data fra OpenWeather API, responsivt design, femdagersvarsel og animerte ikoner.',
     blogDescription: 'En personlig blogg bygget med Next.js og Markdown, med mørk modus, syntaksutheving og SEO-optimalisering.',
     footerRole: 'Christina Lu · Junior Frontend-utvikler',
@@ -60,8 +62,12 @@ function setLanguage(nextLanguage) {
 
   document.documentElement.lang = language;
   document.title = content.pageTitle;
+  const projectCount = document.querySelectorAll('#projects .proj-card').length;
   document.querySelectorAll('[data-i18n]').forEach(element => {
-    element.textContent = content[element.dataset.i18n];
+    const translation = content[element.dataset.i18n];
+    element.textContent = typeof translation === 'function'
+      ? translation(projectCount)
+      : translation;
   });
 
   const languageButton = document.getElementById('language-toggle');
