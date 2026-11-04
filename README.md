@@ -1,4 +1,4 @@
-# Christina Lu Fugelsnes -- Personal Portfolio
+# Christina Lu  -- Personal Portfolio
 
 Welcome to my personal portfolio!
 
